@@ -1,0 +1,79 @@
+.footer-container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 0 20px 0; /* Clean white background, no partition */
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #f1f5f9; /* Subtle top line to separate from content */
+}
+
+.footer-wrapper {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f172a; /* Navy theme */
+    margin-bottom: 15px;
+}
+
+.footer-desc {
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.footer-desc strong {
+    color: #0f172a;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #a31611; /* NITJ Red */
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #10b981; /* Emerald Green */
+}
+
+.footer-contact h3 {
+    font-size: 1.3rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.footer-contact p {
+    color: #64748b;
+    margin-bottom: 60px;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.footer-copyright {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.footer-copyright p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+}

@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+.placements-container {
+    min-height: 100vh;
+    width: 100%;
+    /* Remove the background: url(...) line from here! */
+    color: white;
+    padding-top: 80px;
+}
+
+.placements-overlay {
+    background: rgba(10, 15, 30, 0.85);
+    /* Dark semi-transparent overlay */
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.placements-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #00d2ff;
+    padding-bottom: 10px;
+}
+
+.year-tabs {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid #00d2ff;
+    color: white;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.tab.active,
+.tab:hover {
+    background: #00d2ff;
+    color: #0a0f1e;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+.student-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-10px);
+    border-color: #00d2ff;
+}
+
+.image-wrapper img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #00d2ff;
+}
+
+.student-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: #00d2ff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.role {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.stats-footer {
+    margin-top: auto;
+    padding: 20px;
+    background: rgba(0, 210, 255, 0.1);
+    border-radius: 10px;
+}
+
+.stats-footer a {
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.stats-footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,205 @@
+/* .description_page {
+    height: 80vh;
+    width: 100%;
+    background-color: rgba(247, 196, 100, 0.441);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description_container {
+    background-color: white;
+    height: 90%;
+    width: 90%;
+    border: 1px white;
+    border-radius: 10px;
+    display: flex;
+}
+
+.description_container_part1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .description_container_part2 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.robo-image {
+    height: 70%;
+    width: 80%;
+} */
+
+/* .description_page_heading {
+    padding-top: 0;
+    font-size: 30px;
+    font-weight: 700;
+} */
+
+/* .description_container_part1 h5 { */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* font-size: 22px;         Increased size */
+    /* font-weight: 300;       Makes it less bold/thinner */
+    /* color: #383838;            Optional: subtle grey for a modern look */
+    /* margin-top: 0; */
+    /* letter-spacing: 0.5px;  Improves readability */
+/* }
+
+.description_container_part1 p{
+    color: #3c3b3baf;
+} */
+
+/* .description_container_part1 button {
+    background-color: #a31611; */
+    /* Deep red color from the image */
+    /* color: white;
+    padding: 10px 24px;
+    border: none; */
+    /* border-radius: 4px; */
+    /* Slight rounding on the corners */
+    /* font-family: sans-serif; */
+    /* Clean, modern font */
+    /* font-size: 18px; */
+    /* font-weight: 500; */
+    /* cursor: pointer; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 10px; */
+    /* transition: background-color 0.2s; */
+/* } */
+
+/* .description_container_part1 button:hover { */
+    /* background-color: #8a120e; */
+    /* Slightly darker on hover */
+/* } */
+
+.description_page {
+    min-height: 90vh;
+    width: 100%;
+    /* Gradient matches the Intro page for a seamless transition */
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box; /* Prevents padding from creating a scrollbar */
+}
+
+.description_card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* TEXT SIDE */
+.description_text_side {
+    width: 55%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description_heading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.description_subheading {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10b981; /* Emerald Green from your logo */
+    margin: 8px 0 25px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description_content p {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+/* Redirection Button Styling */
+.explore_link {
+    text-decoration: none;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.explore_btn {
+    background-color: #a31611; /* NITJ Red */
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.explore_btn:hover {
+    background-color: #8a120e;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(163, 22, 17, 0.4);
+}
+
+/* IMAGE SIDE */
+.description_image_side {
+    width: 45%;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image_glow_effect::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #10b981;
+    filter: blur(70px);
+    opacity: 0.15;
+}
+
+.robo_image {
+    width: 75%;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    z-index: 1;
+}
+
+/* Responsive: Stack vertically on mobile */
+@media (max-width: 850px) {
+    .description_card {
+        flex-direction: column;
+    }
+    .description_text_side, .description_image_side {
+        width: 100%;
+        padding: 40px;
+    }
+}

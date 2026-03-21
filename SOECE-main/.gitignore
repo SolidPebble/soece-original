@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+.env.local
+.vercel/
+
+# Mac junk
+.DS_Store
+
+# Build output
+client/dist/
+client/build/
+
+# Logs
+npm-debug.log*
