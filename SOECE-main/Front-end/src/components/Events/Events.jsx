@@ -11,7 +11,7 @@ const Events = () => {
 
     // Fetch from your MongoDB backend
     useEffect(() => {
-        fetch('http://localhost:3000/api/events')
+        fetch('https://soece.vercel.app/api/events')
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
