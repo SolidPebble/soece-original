@@ -9,7 +9,7 @@ import Events from './components/Events/Events';
 import Gallery from './components/Gallery/Gallery';
 import Placements from './components/Placements/Placements';
 import Teams from './components/Teams/Teams';
-import Faculty from './components/faculty/faculty';
+import Faculty from './components/Faculty/Faculty';
 
 function App() {
   return (
