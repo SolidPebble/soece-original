@@ -1,13 +1,9 @@
-const { mongoserver } = require('../model/database');
-const Faculty = require('../model/Faculty');
+let path = require('path');
+let Faculty = require(path.join(__dirname, '..', 'model', 'Faculty.js'));
 
-module.exports = async (req, res) => {
-    try {
-        await mongoserver();
-        const data = await Faculty.Fetchall();
-        res.status(200).json(data);
-    } catch (err) {
-        console.error(err); // ADD THIS LINE
-        res.status(500).json({ message: "Error fetching faculty" });
-    }
-};
+let facultycontroller = async (req, res) => {
+    let data = await Faculty.Fetchall();
+    res.json(data);
+}
+
+module.exports = facultycontroller;

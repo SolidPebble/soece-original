@@ -16,7 +16,7 @@ const [mentors,setMentors] = useState([]);
 
 useEffect(()=>{
 
-  fetch("https://soece.vercel.app/api/faculty")
+  fetch("/api/faculty")
 .then(res => res.json())
 .then(data => setMentors(data))
 .catch(err => console.log(err));

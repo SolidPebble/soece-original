@@ -1,8 +1,17 @@
-const { getdb } = require('./database');
-
+let path = require("path");
+let { getdb } = require(path.join(__dirname, 'database.js'));
 module.exports = class Faculty {
-    static async Fetchall() {
-        const db = getdb();
-        return await db.collection('Faculty').find({}).toArray();
+    constructor(Name, Designation, Department, Qualification, Email, PhotoURL) {
+        this.Name = Name;
+        this.Designation = Designation;
+        this.Department = Department;
+        this.Qualification = Qualification;
+        this.Email = Email;
+        this.PhotoURL = PhotoURL;
     }
-};
+    static async Fetchall() {
+        let db = getdb();
+        let data = await db.collection('Faculty').find({}).toArray();
+        return data;
+    }
+}
