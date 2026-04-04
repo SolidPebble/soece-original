@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/ping', (req, res) => res.json({ status: 'ok' }));
+
 app.use('/api/events', require('./api/events'));
 app.use('/api/faculty', require('./api/faculty'));
 
