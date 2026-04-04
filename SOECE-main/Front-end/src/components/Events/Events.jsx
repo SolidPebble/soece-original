@@ -11,7 +11,7 @@ const Events = () => {
 
     // Fetch from your MongoDB backend
     useEffect(() => {
-        fetch('/api/events')
+        fetch(`${import.meta.env.VITE_API_BASE}/api/events`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data);
