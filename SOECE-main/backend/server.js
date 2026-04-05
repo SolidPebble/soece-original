@@ -13,6 +13,7 @@ app.get('/ping', (req, res) => res.json({ status: 'ok' }));
 app.use('/api/events', require('./api/events'));
 app.use('/api/faculty', require('./api/faculty'));
 app.use('/api/gallery', require('./api/gallery'));
+app.use('/api/placements', require('./api/placements'));
 
 const PORT = process.env.PORT || 5000;
 

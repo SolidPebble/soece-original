@@ -72,13 +72,15 @@
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: #0d1b2a;
+    height: 220px;
 }
 
 /* No crop — image shows fully at natural ratio */
 .gallery-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
