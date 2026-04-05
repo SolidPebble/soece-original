@@ -23,13 +23,20 @@ const Faculty = () => {
     !m.Designation?.toLowerCase().includes("director")
   );
 
-  const professors = mentors.filter(m =>
-    m.Designation?.toLowerCase().includes("professor") &&
-    !m.Designation?.toLowerCase().includes("head")
+  const professors = mentors.filter(m => {
+    const d = m.Designation?.toLowerCase();
+    return d?.includes("professor") &&
+      !d?.includes("associate") &&
+      !d?.includes("assistant") &&
+      !d?.includes("head");
+  });
+
+  const associateProfessors = mentors.filter(m =>
+    m.Designation?.toLowerCase().includes("associate professor")
   );
 
-  const phd = mentors.filter(m =>
-    m.Designation?.toLowerCase().includes("phd")
+  const assistantProfessors = mentors.filter(m =>
+    m.Designation?.toLowerCase().includes("assistant professor")
   );
 
   const FacultyCard = ({ mentor, large = false }) => (
@@ -64,7 +71,6 @@ const Faculty = () => {
             Our <span className="highlight">Mentors</span>
           </h1>
 
-          {/* Director */}
           {director && (
             <div className="director-container">
               <h2 className="designation-title">Director</h2>
@@ -72,7 +78,6 @@ const Faculty = () => {
             </div>
           )}
 
-          {/* Head of Department */}
           {hod && (
             <div className="director-container">
               <h2 className="designation-title">Head of Department</h2>
@@ -80,7 +85,6 @@ const Faculty = () => {
             </div>
           )}
 
-          {/* Professors */}
           {professors.length > 0 && (
             <div className="designation-section">
               <h2 className="designation-title">Professors</h2>
@@ -92,12 +96,22 @@ const Faculty = () => {
             </div>
           )}
 
-          {/* PhD Scholars */}
-          {phd.length > 0 && (
+          {associateProfessors.length > 0 && (
             <div className="designation-section">
-              <h2 className="designation-title">PhD Scholars</h2>
+              <h2 className="designation-title">Associate Professors</h2>
               <div className="faculty-grid">
-                {phd.map((mentor) => (
+                {associateProfessors.map((mentor) => (
+                  <FacultyCard key={mentor._id} mentor={mentor} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {assistantProfessors.length > 0 && (
+            <div className="designation-section">
+              <h2 className="designation-title">Assistant Professors</h2>
+              <div className="faculty-grid">
+                {assistantProfessors.map((mentor) => (
                   <FacultyCard key={mentor._id} mentor={mentor} />
                 ))}
               </div>
