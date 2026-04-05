@@ -1,4 +1,5 @@
 /* RESET & GLOBAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -171,6 +172,16 @@
     transform: scale(1.05);
 }
 
+.secretary-tier .member-photo {
+    object-position:center top;
+}
+
+.circle-photo[alt="Irfan Khan"] {
+    object-position: top;
+}
+.circle-photo[alt="pawan"] {
+    object-position: top;
+}
 .linkedin-icon {
     color: #00df9a;
     text-decoration: none;

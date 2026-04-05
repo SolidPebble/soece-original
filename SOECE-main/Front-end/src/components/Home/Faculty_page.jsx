@@ -11,9 +11,9 @@ const facultyData = [
         designation: "Associate Professor, ECE Dept.",
         image: induImage,
         quote1:
-            "We have come a long way since last few years, but there is a long way to go, heights to reach and responsibilities to carry.",
+            "Innovation is not a destination, it's a direction. Every idea we nurture today becomes the foundation someone else will build upon tomorrow.",
         quote2:
-            "With the launch of events under such a dedicated club, we aim to grow at an exponential pace. Facts do not matter, Perception is Everything."
+            "The most powerful tool in any room is a curious mind. We don't just solve problems — we reimagine the questions."
     },
     {
         name: "Dr. Manjeet Singh",

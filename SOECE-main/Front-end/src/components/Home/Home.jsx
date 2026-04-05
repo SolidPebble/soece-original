@@ -14,7 +14,7 @@ const Home = () => {
     <Intro_page />
     <Description_page />
     <Faculty_page />
-    <Upcoming_events />
+    {/* <Upcoming_events /> */}
     <Our_events />
     <Follow_us />
     <About_ending />

@@ -1,5 +1,9 @@
 import React from 'react';
 import "./About_ending.css";
+const handleSoon = (e) => {
+    e.preventDefault();
+    alert("🚀 Coming Soon! Stay tuned.");
+};
 
 const About_ending = () => {
     return (
@@ -8,16 +12,15 @@ const About_ending = () => {
                 <h2 className="footer-title">About Us</h2>
                 
                 <p className="footer-desc">
-                    Society of Electronics and Communication Engineers <strong>(SOECE)</strong>
+                    Society of Electronics and Communication Engineers <strong>(SoECE)</strong>
                     <br />
                     A society which was established in the department of Electronics and Communication Engineering (ECE) NIT Jalandhar
                 </p>
 
                 <div className="footer-socials">
-                    {/* You can replace these with <img> tags for your icons */}
-                    <a href="#" className="social-link">Twitter</a>
-                    <a href="#" className="social-link">Instagram</a>
-                    <a href="#" className="social-link">LinkedIn</a>
+                    <a href="#" className="social-link" onClick={handleSoon}>Twitter</a>
+                    <a href="https://instagram.com/soece_nitj" target="_blank" rel="noreferrer" className="social-link">Instagram</a>
+                    <a href="#" className="social-link" onClick={handleSoon}>LinkedIn</a>
                 </div>
 
                 <div className="footer-contact">

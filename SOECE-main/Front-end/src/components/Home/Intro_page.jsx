@@ -21,7 +21,7 @@ const Intro_page = () => {
         <section className="intro-container">
             <div className="intro-overlay">
                 <div className="intro-content">
-                    <h1 className="soece-title">SOECE</h1>
+                    <h1 className="soece-title">SoECE</h1>
                     <p className="tagline">Let's Make Electronics Easy</p>
                     
                     <div className="cta-section">

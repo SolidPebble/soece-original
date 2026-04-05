@@ -14,8 +14,14 @@ import dev1Img from '../../assets/coordinator1.jpeg';
 import dev2Img from '../../assets/rudransh.jpeg';
 import dev3Img from '../../assets/shivam.jpeg';
 import dev4Img from '../../assets/drishti.jpeg';
-import dev5Img from '../../assets/soece-logo.jpeg';
-import dev6Img from '../../assets/soece-logo.jpeg';
+import dev5Img from '../../assets/tanu.jpeg';
+import dev6Img from '../../assets/suresh.jpeg';
+import dev7Img from '../../assets/harsh.jpeg';
+import dev8Img from '../../assets/deepak_soece.jpeg';
+import dev9Img from '../../assets/irfan_image.jpeg';
+import dev10Img from '../../assets/deepika_soece.jpeg';
+import dev11Img from '../../assets/pawan.jpeg';
+import dev12Img from '../../assets/vivek.jpeg';
 
 const Teams = () => {
     const departments = [
@@ -23,24 +29,24 @@ const Teams = () => {
             name: "Digital and Social Media Team",
             members: [
                 { name: "Drishti Singla", img: dev4Img, linkedin: "#" },
-                { name: "Vivek Yadav", img: dev5Img, linkedin: "#" },
-                { name: "Tanu Bhargav", img: dev6Img, linkedin: "#" }
+                { name: "Tanu Bhargav", img: dev5Img, linkedin: "#" },
+                { name: "Vivek Yadav", img: dev12Img, linkedin: "#" }
             ]
         },
         {
             name: "Management Team",
             members: [
-                { name: "Deepak Kumar", img: memberPlaceholder, linkedin: "#" },
-                { name: "Harsh Kumar", img: memberPlaceholder, linkedin: "#" },
-                { name: "Suresh Bishnoi", img: memberPlaceholder, linkedin: "#" }
+                { name: "Deepak Kumar", img: dev8Img, linkedin: "#" },
+                { name: "Harsh Kumar", img: dev7Img, linkedin: "#" },
+                { name: "Suresh Bishnoi", img: dev6Img , linkedin: "#" }
             ]
         },
         {
             name: "Technical Team",
             members: [
-                { name: "Irfan Khan", img: memberPlaceholder, linkedin: "#" },
-                { name: "Pawan", img: memberPlaceholder, linkedin: "#" },
-                { name: "Dushyant", img: memberPlaceholder, linkedin: "#" }
+                { name: "Irfan Khan", img: dev9Img, linkedin: "#" },
+                { name: "Deepika", img: dev10Img, linkedin: "#" },
+                { name: "Pawan", img: dev11Img, linkedin: "#" }
             ]
         },
         {
@@ -109,7 +115,9 @@ const Teams = () => {
                                             <div className="circle-image-container">
                                                 <img src={member.img} alt={member.name} className="circle-photo" />
                                                 <div className="member-overlay">
-                                                    <a href={member.linkedin} target="_blank" rel="noreferrer" className="linkedin-icon">in</a>
+                                                    {dept.name === "Our Developer Team" && (
+                                                        <a href={member.linkedin} target="_blank" rel="noreferrer" className="linkedin-icon">in</a>
+                                                    )}
                                                     <p className="hover-name">{member.name}</p>
                                                 </div>
                                             </div>
@@ -123,6 +131,7 @@ const Teams = () => {
                     {/* --- TEAM PAGE FOOTER --- */}
                     <div className="team-footer">
                         <p>Developed with ❤️ by the <span className="dev-team-highlight">Developer Team</span></p>
+                        <p className="footer-contact">If you have any website issues or inquiries, please contact us via email at: <a href="mailto:hardika.ec.24@nitj.ac.in" className="footer-email">hardika.ec.24@nitj.ac.in</a></p>
                     </div>
                 </div>
             </div>
