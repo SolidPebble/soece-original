@@ -197,8 +197,17 @@
     padding: 0 10px;
 }
 
+
+
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
+    .teams-section {
+        padding: 80px 10px;
+        overflow-x: hidden;
+    }
 
     .president-tier .member-card,
     .secretary-tier .member-card,
@@ -207,22 +216,28 @@
         max-width: 300px;
     }
 
-    /* THESE MUST BE INSIDE THE MEDIA QUERY */
     .member-circle-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        gap: 10px;
         justify-items: center;
+        width: 100%;
+        overflow: hidden;
     }
 
     .member-circle-wrapper {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle-image-container {
+        width: 80px;
+        height: 80px;
     }
 
     .hover-name {
-        font-size: 0.7rem;
-        padding: 0 4px;
+        font-size: 0.6rem;
+        padding: 0 2px;
     }
 
     .dept-title-new {
@@ -232,45 +247,8 @@
     .teams-title {
         font-size: 2rem;
     }
-}
 
-/* --- Team Page Footer Style --- */
-/* --- Team Page Footer Style with White Background --- */
-.team-footer {
-    margin-top: 100px;
-    padding: 30px 0;
-    background-color: #ffffff;
-    /* Sets the background to white */
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
-    /* Optional: adds a slight curve to the footer box */
-}
-
-.team-footer p {
-    color: #050816;
-    /* Changes text to dark color for readability on white */
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0;
-}
-
-.dev-team-highlight {
-    color: #008f64;
-    /* A slightly darker green for better contrast on white */
-    font-weight: bold;
-    text-transform: uppercase;
-}
-/* Desktop values — keep these as they were */
-.member-circle-wrapper {
-    width: 150px;
-    height: 150px;
-}
-
-.dept-title-new {
-    font-size: 1.8rem;
-}
-
-.teams-title {
-    font-size: 3rem;
+    .functional-teams {
+        gap: 50px;
+    }
 }
