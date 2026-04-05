@@ -250,3 +250,36 @@
         --angle: 360deg;
     }
 }
+@media (max-width: 768px) {
+    .faculty_title {
+        font-size: 1.6rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .faculty_card {
+        padding: 40px 20px 80px;
+        /* extra bottom padding for button space */
+    }
+
+    .faculty_img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .faculty_text_container p {
+        font-size: 0.95rem;
+    }
+
+    .faculty_signature span {
+        white-space: nowrap;
+        /* ASSOCIATE PROFESSOR, ECE DEPT in one line */
+    }
+
+    .faculty_switch_btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+}

@@ -50,3 +50,9 @@
     margin-top: 10px;
     border-radius: 2px;
 }
+@media (max-width: 600px) {
+    .about_title {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+}

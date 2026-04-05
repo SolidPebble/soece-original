@@ -566,6 +566,7 @@
         padding: 6px 10px;
         letter-spacing: 1px;
         white-space: nowrap;
+        flex: 1;
         flex-shrink: 0;
     }
 
