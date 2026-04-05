@@ -145,7 +145,7 @@
     display: block;
 }
 
-/* The Overlay: Contains name and LinkedIn, hidden by default */
+/* The Overlay */
 .member-overlay {
     position: absolute;
     top: 0;
@@ -162,7 +162,6 @@
     border-radius: 50%;
 }
 
-/* Interaction: Reveal on hover */
 .circle-image-container:hover .member-overlay {
     opacity: 1;
 }
@@ -173,15 +172,17 @@
 }
 
 .secretary-tier .member-photo {
-    object-position:center top;
+    object-position: center top;
 }
 
 .circle-photo[alt="Irfan Khan"] {
     object-position: top;
 }
+
 .circle-photo[alt="pawan"] {
     object-position: top;
 }
+
 .linkedin-icon {
     color: #00df9a;
     text-decoration: none;
@@ -197,11 +198,46 @@
     padding: 0 10px;
 }
 
+/* --- Team Page Footer --- */
+.team-footer {
+    margin-top: 100px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
 
+.team-footer p {
+    color: #050816;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
 
+.footer-contact {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
 
+.footer-email {
+    color: #008f64;
+    font-weight: 600;
+    text-decoration: none;
+}
 
-/* RESPONSIVE */
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.dev-team-highlight {
+    color: #008f64;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
 
     .teams-section {
@@ -209,13 +245,41 @@
         overflow-x: hidden;
     }
 
+    .teams-title {
+        font-size: 2rem;
+    }
+
     .president-tier .member-card,
-    .secretary-tier .member-card,
-    .coordinator-tier .member-card {
+    .secretary-tier .member-card {
         width: 100%;
         max-width: 300px;
     }
 
+    /* Coordinators side by side */
+    .coordinator-tier {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: nowrap;
+    }
+
+    .coordinator-tier .member-card {
+        width: 45%;
+        max-width: 200px;
+        padding: 15px 10px;
+    }
+
+    .coordinator-tier .member-photo-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .coordinator-tier h3 {
+        font-size: 0.85rem;
+    }
+
+    /* Circle grids */
     .member-circle-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -244,11 +308,28 @@
         font-size: 1.3rem;
     }
 
-    .teams-title {
-        font-size: 2rem;
-    }
-
     .functional-teams {
         gap: 50px;
+    }
+
+    /* Footer */
+    .team-footer {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .team-footer p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .footer-contact {
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+
+    .footer-email {
+        font-size: 0.75rem;
+        word-break: break-all;
     }
 }
