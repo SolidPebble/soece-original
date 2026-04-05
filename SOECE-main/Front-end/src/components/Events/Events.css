@@ -545,8 +545,28 @@
         padding: 50px 20px 36px;
     }
 
+    /* All filter buttons in one row */
     .ep-filters {
-        padding: 0 16px 36px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        padding: 0 10px 36px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .ep-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ep-filter-btn {
+        font-size: 10px;
+        padding: 6px 10px;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .ep-modal-highlights {
@@ -560,5 +580,13 @@
     .ep-modal-media,
     .ep-modal-media-placeholder {
         height: 200px;
+    }
+
+    .ep-page-subtitle {
+        font-size: 13px;
+    }
+
+    .ep-card-title {
+        font-size: 16px;
     }
 }

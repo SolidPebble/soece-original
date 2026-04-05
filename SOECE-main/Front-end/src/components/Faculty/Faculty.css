@@ -152,5 +152,9 @@
 .director-card{
     transform:scale(1);
 }
+.faculty-title {
+    font-size: 2rem;
+    white-space: nowrap;
+}
 
 }
