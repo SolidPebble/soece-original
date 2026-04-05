@@ -1,8 +1,10 @@
-*{
+* {
     margin: 0;
     border: 0;
     padding: 0;
-}.gallery-section {
+}
+
+.gallery-section {
     background-color: #050816;
     padding: 80px 20px;
     min-height: 100vh;
@@ -53,27 +55,29 @@
     box-shadow: 0 0 15px rgba(0, 223, 154, 0.3);
 }
 
-/* Masonry Grid Logic */
+/* Gallery Grid — masonry style, no crop */
 .gallery-grid {
     columns: 3;
-    /* Standard 3 columns */
     column-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gallery-item {
     position: relative;
     margin-bottom: 20px;
-    /* Vertical gap */
     break-inside: avoid;
-    /* Prevents image from splitting between columns */
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #0d1b2a;
 }
 
+/* No crop — image shows fully at natural ratio */
 .gallery-img {
     width: 100%;
+    height: auto;
     display: block;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -100,7 +104,7 @@
 }
 
 .gallery-item:hover .gallery-img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .item-cat {
@@ -114,9 +118,10 @@
 .item-title {
     font-size: 1.1rem;
     font-weight: 400;
+    color: #ffffff;
 }
 
-/* Responsive Grid */
+/* Responsive */
 @media (max-width: 992px) {
     .gallery-grid {
         columns: 2;
@@ -132,38 +137,3 @@
         font-size: 2.5rem;
     }
 }
-/* ... Keep existing gallery-section and title styles ... */
-
-.gallery-grid {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-item {
-    position: relative;
-    width: 350px;
-    /* Specific Width */
-    height: 250px;
-    /* Specific Height */
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.gallery-img {
-    width: 100%;
-    /* Fills the container width */
-    height: 100%;
-    /* Fills the container height */
-    object-fit: cover;
-    /* Ensures image doesn't stretch */
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-/* ... Keep existing gallery-overlay and filter-btn styles ... */

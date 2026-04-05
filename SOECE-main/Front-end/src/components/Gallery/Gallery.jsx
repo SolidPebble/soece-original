@@ -1,62 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "../Home/Navbar";
 import './Gallery.css';
 
-// Importing 6 unique images from assets
-import dev1Img from '../../assets/soece-logo.jpeg';
-import dev2Img from '../../assets/soece-logo.jpeg';
-import dev3Img from '../../assets/soece-logo.jpeg';
-import dev4Img from '../../assets/soece-logo.jpeg';
-import dev5Img from '../../assets/soece-logo.jpeg';
-import dev6Img from '../../assets/soece-logo.jpeg';
-
 const Gallery = () => {
     const [filter, setFilter] = useState('All');
+    const [galleryData, setGalleryData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const galleryData = [
-        {
-            id: 1,
-            category: 'Techfest',
-            title: 'Inauguration Ceremony',
-            img: dev1Img
-        },
-        {
-            id: 2,
-            category: 'Techfest',
-            title: 'Project Exhibition',
-            img: dev2Img
-        },
-        {
-            id: 3,
-            category: 'Workshops',
-            title: 'Arduino Masterclass',
-            img: dev3Img
-        },
-        {
-            id: 4,
-            category: 'Workshops',
-            title: 'IoT Hands-on Session',
-            img: dev4Img
-        },
-        {
-            id: 5,
-            category: 'Cultural',
-            title: 'Society Annual Meet',
-            img: dev5Img
-        },
-        {
-            id: 6,
-            category: 'Cultural',
-            title: 'Tech-Night Celebration',
-            img: dev6Img
-        }
-    ];
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_BASE}/api/gallery`)
+            .then(res => res.json())
+            .then(data => {
+                setGalleryData(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error('Gallery error:', err);
+                setLoading(false);
+            });
+    }, []);
 
-    const categories = ['All', 'Techfest', 'Workshops', 'Cultural'];
+    const categories = ['All', ...Array.from(new Set(galleryData.map(item => item.category)))];
 
     const filteredImages = filter === 'All'
         ? galleryData
         : galleryData.filter(item => item.category === filter);
+
+    if (loading) {
+        return (
+            <>
+                <Navbar />
+                <section className="gallery-section">
+                    <div className="gallery-container">
+                        <h1 className="gallery-title">Our <span className="highlight">Memories</span></h1>
+                        <p style={{ textAlign: 'center', color: '#aaa' }}>Loading gallery...</p>
+                    </div>
+                </section>
+            </>
+        );
+    }
 
     return (
         <>
@@ -79,7 +61,7 @@ const Gallery = () => {
 
                     <div className="gallery-grid">
                         {filteredImages.map((item) => (
-                            <div key={item.id} className="gallery-item">
+                            <div key={item._id} className="gallery-item">
                                 <img src={item.img} alt={item.title} className="gallery-img" />
                                 <div className="gallery-overlay">
                                     <span className="item-cat">{item.category}</span>
@@ -88,6 +70,12 @@ const Gallery = () => {
                             </div>
                         ))}
                     </div>
+
+                    {filteredImages.length === 0 && (
+                        <p style={{ textAlign: 'center', color: '#aaa', marginTop: '40px' }}>
+                            No images found for this category
+                        </p>
+                    )}
                 </div>
             </section>
         </>
