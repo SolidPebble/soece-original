@@ -164,8 +164,8 @@
 /* Stagger delay via inline style */
 .ep-card-thumb {
     width: 100%;
-    height: 190px;
-    object-fit: cover;
+    height: 190;
+    object-fit: contain;
     display: block;
     background: var(--ep-bg-elevated);
     position: relative;
