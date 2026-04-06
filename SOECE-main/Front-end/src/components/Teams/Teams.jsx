@@ -70,9 +70,9 @@ const Teams = () => {
                     <div className="tier president-tier">
                         <div className="member-card highlight">
                             <div className="member-photo-container">
-                                <img src={presidentImg} alt="Sandeep Choudhary" className="member-photo" />
+                                <img src={presidentImg} alt="Sandeep Chaudhary" className="member-photo" />
                             </div>
-                            <h3>Sandeep Chaudhary</h3>
+                            <h3>Sandeep Choudhary</h3>
                             <p className="member-role">President</p>
                         </div>
                     </div>
