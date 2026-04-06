@@ -31,7 +31,7 @@ const Our_events = () => {
             id: 6,
             title: "Smart Electronics Workshop",
             category: "Workshop",
-            date: "8th November 2026",
+            date: "8th November 2025",
             time: "10:30 AM",
             venue: "E-1, ECE Building",
             host: "SO-ECE",

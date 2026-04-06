@@ -73,7 +73,7 @@ const Faculty = () => {
 
           {director && (
             <div className="director-container">
-              <h2 className="designation-title">Director</h2>
+              <h2 className="designation-title"> Honorable Director</h2>
               <FacultyCard mentor={director} large={true} />
             </div>
           )}

@@ -1,0 +1,197 @@
+.calendar_section {
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #0f172a;
+}
+
+.calendar_container {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    animation: border-glow 3s ease-in-out infinite;
+}
+
+.calendar_header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.calendar_header h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    /* ← dark text on white card */
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.calendar_header p {
+    color: #10b981;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.calendar_timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.timeline_item {
+    display: flex;
+    gap: 25px;
+    position: relative;
+}
+
+.timeline_item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 70px;
+    bottom: -40px;
+    width: 2px;
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.timeline_date_box {
+    min-width: 65px;
+    height: 65px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.date_day {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1e293b;
+    /* ← dark on white */
+}
+
+.date_month {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #10b981;
+    font-weight: 700;
+}
+
+.timeline_content {
+    flex: 1;
+    padding-bottom: 15px;
+}
+
+.event_badge {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.event_badge.exam {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.event_badge.holiday {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.event_badge.workshop {
+    background: #dcfce7;
+    color: #10b981;
+}
+
+.event_badge.academic {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.event_badge.event {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.event_title {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #1e293b;
+    /* ← dark on white */
+    font-weight: 600;
+}
+
+.event_desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    /* ← gray on white */
+    line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .calendar_container {
+        padding: 24px 16px;
+    }
+
+    .calendar_header h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline_item {
+        gap: 15px;
+    }
+
+    .timeline_date_box {
+        min-width: 55px;
+        height: 55px;
+    }
+
+    .date_day {
+        font-size: 1.1rem;
+    }
+
+    .event_title {
+        font-size: 1rem;
+    }
+
+    .event_desc {
+        font-size: 0.85rem;
+    }
+
+    .timeline_item:not(:last-child)::after {
+        left: 27px;
+    }
+}
+@keyframes border-glow {
+    0% {
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(16, 185, 129, 0.7), 0 0 50px rgba(16, 185, 129, 0.3), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+}

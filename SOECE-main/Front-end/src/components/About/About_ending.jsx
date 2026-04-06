@@ -66,7 +66,7 @@ const About_ending = () => {
                 </div>
 
                 <div className="footer-copyright">
-                    <p>Copyright © 2026 | All rights reserved, SOECE NIT Jalandhar – 144011</p>
+                    <p>Copyright © 2026 | All rights reserved, SoECE NIT Jalandhar – 144011</p>
                 </div>
             </div>
         </footer>
