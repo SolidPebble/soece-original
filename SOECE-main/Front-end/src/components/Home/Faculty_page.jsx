@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import induImage from "../../assets/indu-mam.png";
-import secondImage from "../../assets/manjeet-sir.png"; // add second image
+import secondImage from "../../assets/manjeet-sir-new.jpg"; // add second image
 
 const facultyData = [
     {

@@ -203,3 +203,38 @@
         padding: 40px;
     }
 }
+@media (max-width: 850px) {
+    .description_text_side {
+        padding: 30px 25px;
+    }
+
+    .description_heading {
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+
+    .description_subheading {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .description_content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .explore_btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .description_image_side {
+        padding: 20px;
+        min-height: 200px;
+    }
+
+    .robo_image {
+        width: 55%;
+    }
+}
