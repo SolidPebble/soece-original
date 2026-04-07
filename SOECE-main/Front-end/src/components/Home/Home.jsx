@@ -11,36 +11,49 @@ import "./Home.css";
 
 const calendarEvents = [
   {
-    day: "15",
-    month: "Apr",
+    day: "19",
+    month: "Jan",
+    type: "Academic",
+    title: "Semester Begins",
+    description: "Start of Even Semester 2025-26, classes commence."
+  },
+  {
+    day: "10",
+    month: "Feb",
     type: "Exam",
-    title: "Mid-Term Examination",
-    description: "Syllabus covers units 1 to 3 for all ECE core subjects."
+    title: "Quiz Week 1",
+    description: "First quiz week for all ECE core subjects."
   },
   {
-    day: "22",
-    month: "Apr",
-    type: "Workshop",
-    title: "VLSI Design Seminar",
-    description: "Expert talk on industrial trends in chip design."
+    day: "09",
+    month: "Mar",
+    type: "Exam",
+    title: "Mid Semester Exam",
+    description: "Mid-Sem examinations from 9th March to 13th March."
   },
   {
-    day: "01",
+    day: "26",
+    month: "Mar",
+    type: "Event",
+    title: "UTKANSH-26 / TECHNIti-26",
+    description: "Annual technical and cultural fest of NIT Jalandhar, 26-29 March."
+  },
+  {
+    day: "11",
     month: "May",
-    type: "Holiday",
-    title: "Labour Day",
-    description: "Institute will remain closed."
+    type: "Exam",
+    title: "End Semester Exam",
+    description: "End-Sem examinations from 11th May to 22nd May."
   }
 ];
-
 const notices = [
   {
-    title: "Arduino Master Class",
-    category: "Workshop",
-    venue: "SB-3, ECE Building",
-    date: "19 Feb 2026",
-    time: "05:30 PM",
-    isLive: false
+    title: "Treasure hunt",
+    category: "Competition",
+    venue: "To Be Announced",
+    date: "25 April 2026",
+    time: "To Be Announced",
+    isLive: true
   },
   {
     title: "Mind the Mind",
@@ -48,7 +61,7 @@ const notices = [
     venue: "LT 404",
     date: "28 March 2026",
     time: "11:00 AM",
-    isLive: true
+    isLive: false
   },
   {
     title: "Cricket Tournament",
