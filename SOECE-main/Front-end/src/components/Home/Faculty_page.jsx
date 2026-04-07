@@ -17,7 +17,7 @@ const facultyData = [
     },
     {
         name: "Dr. Manjeet Singh",
-        designation: "Associate Professor, ECE Dept.",
+        designation: "Assistant Professor, ECE Dept.",
         image: secondImage,
         quote1:
             "Innovation and research are the pillars of engineering excellence.",

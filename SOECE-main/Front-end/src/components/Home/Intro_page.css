@@ -1,76 +1,6 @@
-/* .intro-page {
-    width: 100%;
-    height: 80vh;
-    background-color: #7fffd4;
-}
-
-.intro-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .soece {
-    /* Font styling */
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-weight: 500; */
-    /* Medium weight - noticeably thinner than before */
-    /* font-size: 6rem; */
-    /* Significantly larger size */
-    /* text-transform: uppercase; */
-    /* color: #ffffff; */
-
-    /* Refined Shadow */
-    /* Keeping the shadow subtle so it doesn't make the thin letters look "muddy" */
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); */
-
-    /* Spacing */
-    /* letter-spacing: 4px; */
-    /* Increased spacing to match the larger, thinner style */
-    /* line-height: 1; */
-    /* display: inline-block; */
-/* } */ 
-
-/* .nitj-button {
-    background-color: #a31611; */
-    /* Deep red color from the image */
-    /* color: white;
-    padding: 10px 24px;
-    border: none;
-    border-radius: 4px; */
-    /* Slight rounding on the corners */
-    /* font-family: sans-serif; */
-    /* Clean, modern font */
-    /* font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.2s; */
-/* } */
-
-/* .nitj-button:hover {
-    background-color: #8a120e; */
-    /* Slightly darker on hover */
-/* } */
-
-/* .department {
-    margin-top: 20px;
-    font-size: 18px;
-    text-transform: capitalize;
-}
-
-.tagline {
-    margin-top: 20px;
-    font-size: 30px;
-    text-transform: capitalize;
-} */
-
 .intro-container {
     /* Height is 100vh minus the Navbar height (12vh) to prevent scrolling */
-    height: 88vh; 
+    height: 88vh;
     width: 100%;
     /* Gradient from Deep Navy to a slightly lighter tech-blue */
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -103,19 +33,21 @@
 
 .soece-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(4rem, 10vw, 8rem); /* Fluid typography */
+    font-size: clamp(4rem, 10vw, 8rem);
+    /* Fluid typography */
     font-weight: 700;
     letter-spacing: 12px;
     margin: 0;
     background: linear-gradient(to bottom, #ffffff, #94a3b8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
 }
 
 .tagline {
     font-size: clamp(1.2rem, 3vw, 2rem);
-    color: #10b981; /* Matches Logo Emerald Green */
+    color: #10b981;
+    /* Matches Logo Emerald Green */
     font-weight: 300;
     margin-top: -10px;
     letter-spacing: 2px;
@@ -152,6 +84,7 @@
     position: relative;
     z-index: 10;
 }
+
 .nitj-button:active {
     transform: scale(0.97);
 }
