@@ -127,29 +127,38 @@
 }
 
 .nitj-button {
-    background-color: #a31611; /* Logo Red */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: linear-gradient(135deg, #c51610, #ff2a1f);
+    /* 🔥 richer red */
     color: white;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 50px; /* Modern pill shape */
+    padding: 14px 34px;
+
+    border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(163, 22, 17, 0.4);
-    pointer-events: none;
-    user-select: none;
-}
-.nitj-link {
-    display: inline-block;
+
     text-decoration: none;
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
+    transition: all 0.3s ease;
+
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 10;
+}
+.nitj-button:active {
+    transform: scale(0.97);
 }
 
 .nitj-button:hover {
-    background-color: #bc1a14;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(163, 22, 17, 0.6);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.55);
 }
 
 .info-footer {
