@@ -18,7 +18,7 @@ const calendarEvents = [
     description: "Start of Even Semester 2025-26, classes commence."
   },
   {
-    day: "10",
+    day: "09",
     month: "Feb",
     type: "Exam",
     title: "Quiz Week 1",
@@ -29,7 +29,7 @@ const calendarEvents = [
     month: "Mar",
     type: "Exam",
     title: "Mid Semester Exam",
-    description: "Mid-Sem examinations from 9th March to 13th March."
+    description: "Mid-Sem examinations from 9th March to 17th March."
   },
   {
     day: "26",
@@ -43,7 +43,7 @@ const calendarEvents = [
     month: "May",
     type: "Exam",
     title: "End Semester Exam",
-    description: "End-Sem examinations from 11th May to 22nd May."
+    description: "End-Sem examinations from 11th May to 5th june."
   }
 ];
 const notices = [

@@ -137,6 +137,13 @@
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(163, 22, 17, 0.4);
+    pointer-events: none;
+    user-select: none;
+}
+.nitj-link {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nitj-button:hover {
