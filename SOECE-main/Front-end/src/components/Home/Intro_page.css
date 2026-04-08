@@ -1,9 +1,9 @@
 .intro-container {
     /* Height is 100vh minus the Navbar height (12vh) to prevent scrolling */
-    height: 88vh;
+    height: 100%;
     width: 100%;
     /* Gradient from Deep Navy to a slightly lighter tech-blue */
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
