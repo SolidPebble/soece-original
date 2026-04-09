@@ -6,10 +6,13 @@ const { mongoserver } = require('./config/database');
 
 const app = express();
 
-// Security headers — must be first
 app.use(helmet());
 
-// CORS — only allow your frontend
+app.use((req, res, next) => {
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+    next();
+});
+
 app.use(cors({
     origin: 'https://www.soece-nitj.in',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -18,6 +21,8 @@ app.use(cors({
 
 app.use(express.json());
 
+// Root route — fixes 404 on securityheaders.com scan
+app.get('/', (req, res) => res.json({ status: 'ok', message: 'SOECE API running' }));
 app.get('/ping', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/events', require('./api/events'));
