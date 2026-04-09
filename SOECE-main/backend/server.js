@@ -1,11 +1,21 @@
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 require('dotenv').config();
 const { mongoserver } = require('./config/database');
 
 const app = express();
 
-app.use(cors());
+// Security headers — must be first
+app.use(helmet());
+
+// CORS — only allow your frontend
+app.use(cors({
+    origin: 'https://www.soece-nitj.in',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 
 app.get('/ping', (req, res) => res.json({ status: 'ok' }));
