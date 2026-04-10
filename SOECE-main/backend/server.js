@@ -7,6 +7,7 @@ const { mongoserver } = require('./config/database');
 
 const app = express();
 
+app.set('trust proxy', 1);
 // ─── SECURITY HEADERS ─
 app.use(helmet());
 app.use((req, res, next) => {
