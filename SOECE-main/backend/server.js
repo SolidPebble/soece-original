@@ -26,7 +26,7 @@ app.use(express.json());
 // ─── RATE LIMITING 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 500,
     message: { error: 'Too many requests, please try again later' }
 });
 app.use('/api/', limiter);
@@ -50,8 +50,8 @@ function cacheMiddleware(req, res, next) {
 }
 
 
-app.get('/', (req, res) => res.json({ status: 'ok', message: 'SOECE API running' }));
-app.get('/ping', (req, res) => res.json({ status: 'ok' }));
+app.get('/', (req, res) => res.json({ status: 'ok', message: 'SoECE API running' }));
+// app.get('/ping', (req, res) => res.json({ status: 'ok' }));
 
 app.use('/api/events', cacheMiddleware, require('./api/events'));
 app.use('/api/faculty', cacheMiddleware, require('./api/faculty'));
