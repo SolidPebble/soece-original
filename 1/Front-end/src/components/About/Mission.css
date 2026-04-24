@@ -1,0 +1,89 @@
+.mission_section {
+    min-height: 80vh;
+    width: 100%;
+    background-color:#0a1628; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.mission_card {
+    background-color:white;
+    color:black;
+    width: 90%;
+    max-width: 1000px;
+    border-radius:10px;
+    padding: 50px;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+}
+
+.mission_content_wrapper {
+    width: 100%;
+    text-align: center;
+    border-radius:10px;
+}
+
+.mission_title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mission_accent_bar {
+    width: 80px;
+    height: 5px;
+    background-color: var(--accent-green);
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+}
+
+.vision_highlight {
+    font-size: 1.2rem;
+    color: var(--accent-green);
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.mission_list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.mission_list li {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.mission_list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .mission_card {
+        padding: 30px 20px;
+    }
+    .mission_title {
+        font-size: 1.8rem;
+    }
+}

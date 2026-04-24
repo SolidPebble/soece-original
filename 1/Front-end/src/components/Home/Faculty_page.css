@@ -1,0 +1,206 @@
+/* .faculty_page {
+    height: 80vh;
+    width: 100%;
+    background-color: rgba(247, 196, 100, 0.441);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty_container {
+    background-color: white;
+    height: 90%;
+    width: 90%;
+    border: 1px white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty{
+    height: 60%;
+    width: 70%;
+    background-color: rgb(105, 228, 239);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faculty-box{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty-para{
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.faculty-img{
+    height: 50%;
+    width: 70%;
+} */
+
+.faculty_section {
+    min-height: 90vh;
+    width: 100%;
+    background-color: #0f172a; /* Deep Navy Theme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.faculty_card {
+    background-color: white;
+    width: 95%;
+    max-width: 1100px;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faculty_title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.faculty_accent_bar {
+    width: 60px;
+    height: 4px;
+    background-color: #10b981; /* Emerald Green */
+    margin-bottom: 50px;
+    border-radius: 2px;
+}
+
+.faculty_content_flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Image Container Styles */
+.faculty_image_container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.faculty_link_wrapper {
+    cursor: default !important; /* Standard arrow cursor for the image */
+}
+
+.faculty_img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular professional look */
+    border: 5px solid #f1f5f9;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.faculty_img:hover {
+    transform: scale(1.02);
+}
+
+/* Text Styles */
+.faculty_text_container {
+    flex: 1.5;
+    position: relative;
+}
+
+.quote_icon {
+    font-size: 5rem;
+    color: #10b981;
+    opacity: 0.2;
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-family: serif;
+}
+
+.faculty_text_container p {
+    color: #475569;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.faculty_signature {
+    margin-top: 30px;
+}
+
+.faculty_signature h4 {
+    font-size: 1.4rem;
+    color: #0f172a;
+    margin: 0;
+}
+
+.faculty_signature span {
+    color: #10b981;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .faculty_content_flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .quote_icon {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== Next Faculty Advisor Button ===== */
+
+/* Make card relative so button stays inside */
+.faculty_card {
+    position: relative;
+    /* ADD THIS */
+}
+
+/* Button inside white card */
+.faculty_switch_btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.faculty_switch_btn:hover {
+    transform: translateY(-3px);
+}

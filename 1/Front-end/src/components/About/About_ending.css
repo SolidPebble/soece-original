@@ -1,0 +1,145 @@
+.footer-container {
+    width: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 80px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-wrapper {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.footer-desc {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+}
+
+.footer-desc strong {
+    color: var(--text-primary);
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--accent-red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.social-link:hover {
+    color: var(--accent-green);
+}
+
+.footer-contact h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.contact-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: var(--accent-green);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.contact-divider {
+    width: 1px;
+    height: 60px;
+    background-color: var(--border-light);
+    align-self: center;
+}
+
+.footer-copyright {
+    border-top: 1px solid var(--border-light);
+    padding-top: 20px;
+}
+
+.footer-copyright p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 50px 0 20px 0;
+    }
+
+    .footer-title {
+        font-size: 1.6rem;
+    }
+
+    .footer-desc {
+        font-size: 0.9rem;
+    }
+
+    .footer-socials {
+        gap: 20px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .contact-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    .footer-copyright p {
+        font-size: 0.75rem;
+    }
+}

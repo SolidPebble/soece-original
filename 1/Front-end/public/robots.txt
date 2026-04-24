@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://soece-nitj.in/sitemap.xml

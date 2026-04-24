@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.placements-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #050816;
+    color: white;
+}
+
+.placements-overlay {
+    min-height: 100vh;
+    padding: 100px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.placements-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #00d2ff;
+    padding-bottom: 10px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Year tabs */
+.year-tabs {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid #00d2ff;
+    color: white;
+    padding: 8px 22px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.tab.active,
+.tab:hover {
+    background: #00d2ff;
+    color: #0a0f1e;
+}
+
+/* Student grid */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+.student-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d2ff;
+}
+
+.image-wrapper img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid #00d2ff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.student-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: #00d2ff;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.role {
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-top: 3px;
+}
+
+.stats-footer {
+    padding: 16px 24px;
+    background: rgba(0, 210, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.stats-footer p {
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+.stats-footer a {
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.stats-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .placements-title {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    /* 1 card per row on mobile */
+    .student-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .student-card {
+        width: 100%;
+    }
+
+    .image-wrapper img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .student-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .tab {
+        padding: 6px 16px;
+        font-size: 0.8rem;
+    }
+
+    .stats-footer {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .stats-footer p {
+        white-space: nowrap;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .placements-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .stats-footer p {
+        font-size: 0.7rem;
+    }
+}

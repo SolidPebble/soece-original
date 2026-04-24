@@ -1,0 +1,117 @@
+/* ────────────────────────────────────────────
+   Footer
+──────────────────────────────────────────── */
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #333333;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── About Us ── */
+.footer-about {
+  padding: 60px 20px 30px 20px;
+}
+
+.footer-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.footer-sub {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 6px auto;
+}
+
+/* ── Divider ── */
+.footer-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* ── Contact Us ── */
+.footer-contact {
+  padding: 30px 20px 40px 20px;
+}
+
+.footer-contact-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.footer-coordinators {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.coordinator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.coordinator-role {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.coordinator-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.coordinator-link {
+  font-size: 0.9rem;
+  color: #2e9e6b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.coordinator-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ── Copyright bar ── */
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  padding: 14px 20px;
+}
+
+.footer-bottom p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: #aaaaaa;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .footer-coordinators {
+    gap: 40px;
+  }
+  .footer-title {
+    font-size: 1.6rem;
+  }
+}
