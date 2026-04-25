@@ -1,0 +1,116 @@
+/* .mission{
+    height: 80vh;
+    width: 100%;
+    background-color: rgba(247, 196, 100, 0.441);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.our_mission{
+    background-color: white;
+    height: 90%;
+    width: 90%;
+    border: 1px white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission_container{
+    height: 90%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.mission_section {
+    min-height: 80vh;
+    width: 100%;
+    /* Dark Navy matching your theme */
+    background-color: #0f172a; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.mission_card {
+    background-color: white;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+}
+
+.mission_content_wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.mission_title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mission_accent_bar {
+    width: 80px;
+    height: 5px;
+    background-color: #10b981; /* Emerald Green from Logo */
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+}
+
+.vision_highlight {
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.mission_list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.mission_list li {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* Custom Checkmark/Bullet using Logo Green */
+.mission_list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .mission_card {
+        padding: 30px 20px;
+    }
+    .mission_title {
+        font-size: 1.8rem;
+    }
+}

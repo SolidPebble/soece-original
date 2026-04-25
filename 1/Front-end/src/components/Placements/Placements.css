@@ -5,6 +5,93 @@
     box-sizing: border-box;
 }
 
+/* ── Hero wrapper ── */
+.pl-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    background: #09101d;
+}
+
+.pl-hero-wrapper .circuit-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 0;
+}
+
+.pl-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 8, 18, 0.35) 0%,
+        rgba(4, 8, 18, 0.45) 60%,
+        rgba(9, 16, 29, 0.92) 100%
+    );
+}
+
+.pl-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.pl-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* ── Glass title card — same as About/Events/Faculty ── */
+.pl-title-card {
+    width: 510px;
+    min-height: 118px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 24px;
+}
+
+.pl-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.pl-title-line {
+    width: 54px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: #00d2ff;
+}
+
+/* ── Page content ── */
 .placements-container {
     min-height: 100vh;
     width: 100%;
@@ -14,22 +101,11 @@
 
 .placements-overlay {
     min-height: 100vh;
-    padding: 100px 20px 60px;
+    padding: 60px 20px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-
-.placements-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 3px solid #00d2ff;
-    padding-bottom: 10px;
-    text-align: center;
-    white-space: nowrap;
 }
 
 /* Year tabs */
@@ -136,15 +212,24 @@
     text-decoration: underline;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 768px) {
-    .placements-title {
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-        white-space: nowrap;
+    .pl-hero-wrapper {
+        height: 300px;
     }
 
-    /* 1 card per row on mobile */
+    .pl-title-card {
+        width: calc(100% - 40px);
+        min-height: 100px;
+        padding: 18px 16px;
+        border-radius: 14px;
+    }
+
+    .pl-title {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
     .student-grid {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -180,7 +265,7 @@
 }
 
 @media (max-width: 400px) {
-    .placements-title {
+    .pl-title {
         font-size: 1.1rem;
         letter-spacing: 0.5px;
     }

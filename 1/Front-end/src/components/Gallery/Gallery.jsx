@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../Home/Navbar";
+import CircuitBackground from "../Home/CircuitBackground";
 import './Gallery.css';
 
 const Gallery = () => {
@@ -22,10 +23,15 @@ const Gallery = () => {
     if (loading) {
         return (
             <>
-                <Navbar />
+                <div className="gl-hero-wrapper">
+                    <CircuitBackground useWindowSize={true} />
+                    <div className="gl-hero-overlay"></div>
+                    <div className="gl-hero-content">
+                        <Navbar />
+                    </div>
+                </div>
                 <section className="gallery-section">
                     <div className="gallery-container">
-                        <h1 className="gallery-title">Our <span className="highlight">Memories</span></h1>
                         <p style={{ textAlign: 'center', color: '#aaa' }}>Loading gallery...</p>
                     </div>
                 </section>
@@ -35,10 +41,26 @@ const Gallery = () => {
 
     return (
         <>
-            <Navbar />
+            {/* ── Circuit hero ── */}
+            <div className="gl-hero-wrapper">
+                <CircuitBackground useWindowSize={true} />
+                <div className="gl-hero-overlay"></div>
+                <div className="gl-hero-content">
+                    <Navbar />
+                    <div className="gl-hero">
+                        <div className="gl-title-card">
+                            <h1 className="gl-title">
+                                Our <span className="gl-highlight">Memories</span>
+                            </h1>
+                            <div className="gl-title-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* ── Rest of page ── */}
             <section className="gallery-section">
                 <div className="gallery-container">
-                    <h1 className="gallery-title">Our <span className="highlight">Memories</span></h1>
 
                     <div className="gallery-grid">
                         {galleryData.map((item) => (
@@ -59,6 +81,7 @@ const Gallery = () => {
                             No photos yet
                         </p>
                     )}
+
                 </div>
             </section>
         </>

@@ -4,9 +4,99 @@
     padding: 0;
 }
 
+/* ── Hero wrapper ── */
+.gl-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    background: #09101d;
+}
+
+.gl-hero-wrapper .circuit-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 0;
+}
+
+.gl-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 8, 18, 0.35) 0%,
+        rgba(4, 8, 18, 0.45) 60%,
+        rgba(9, 16, 29, 0.92) 100%
+    );
+}
+
+.gl-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.gl-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* ── Glass title card ── */
+.gl-title-card {
+    width: 510px;
+    min-height: 118px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 24px;
+}
+
+.gl-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    margin: 0;
+}
+
+.gl-highlight {
+    color: #00df9a;
+}
+
+.gl-title-line {
+    width: 54px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: #00df9a;
+}
+
+/* ── Gallery section ── */
 .gallery-section {
     background: linear-gradient(135deg, #0a0f1e 0%, #0d1b2a 50%, #0a1628 100%);
-    padding: 80px 20px;
+    padding: 60px 20px 80px;
     min-height: 100vh;
     color: #ffffff;
 }
@@ -17,17 +107,7 @@
     text-align: center;
 }
 
-.gallery-title {
-    font-size: 3.5rem;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
-.gallery-title .highlight {
-    color: #00df9a;
-}
-
-/* Gallery Grid */
+/* Gallery grid */
 .gallery-grid {
     columns: 3;
     column-gap: 20px;
@@ -55,7 +135,6 @@
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Overlay Effect */
 .gallery-overlay {
     position: absolute;
     top: 0;
@@ -94,19 +173,28 @@
     opacity: 0.9;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 992px) {
     .gallery-grid {
         columns: 2;
     }
 }
 
+@media (max-width: 768px) {
+    .gl-hero-wrapper {
+        height: 300px;
+    }
+
+    .gl-title-card {
+        width: calc(100% - 40px);
+        min-height: 100px;
+        padding: 18px 16px;
+        border-radius: 14px;
+    }
+}
+
 @media (max-width: 600px) {
     .gallery-grid {
         columns: 1;
-    }
-
-    .gallery-title {
-        font-size: 2.5rem;
     }
 }

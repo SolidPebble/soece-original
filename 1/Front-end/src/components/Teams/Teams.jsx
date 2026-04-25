@@ -1,15 +1,13 @@
 import React from 'react';
 import Navbar from "../Home/Navbar";
+import CircuitBackground from "../Home/CircuitBackground";
 import './Teams.css';
 
-// --- Imports ---
 import presidentImg from '../../assets/president.jpeg';
 import secretaryImg from '../../assets/secretary.jpeg';
 import coord1Img from '../../assets/coordinator1.jpeg';
 import coord2Img from '../../assets/coordinator2.jpeg';
 import memberPlaceholder from '../../assets/soece-logo.jpeg';
-
-// Import individual images for Developer Team
 import dev1Img from '../../assets/coordinator1.jpeg';
 import dev2Img from '../../assets/rudransh.jpeg';
 import dev3Img from '../../assets/shivam.jpeg';
@@ -38,7 +36,7 @@ const Teams = () => {
             members: [
                 { name: "Deepak Kumar", img: dev8Img, linkedin: "#" },
                 { name: "Harsh Kumar", img: dev7Img, linkedin: "#" },
-                { name: "Suresh Bishnoi", img: dev6Img , linkedin: "#" }
+                { name: "Suresh Bishnoi", img: dev6Img, linkedin: "#" }
             ]
         },
         {
@@ -60,13 +58,27 @@ const Teams = () => {
     ];
 
     return (
-        <> 
-            <Navbar />
+        <>
+            {/* ── Circuit hero ── */}
+            <div className="teams-hero-wrapper">
+                <CircuitBackground useWindowSize={true} />
+                <div className="teams-hero-overlay"></div>
+                <div className="teams-hero-content">
+                    <Navbar />
+                    <div className="teams-hero">
+                        <div className="teams-title-card">
+                            <h1 className="teams-title">Our Society Team</h1>
+                            <div className="teams-title-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* ── Rest of page ── */}
             <div className="teams-section">
                 <div className="container">
-                    <h1 className="teams-title">Our Society Team</h1>
 
-                    {/* --- LEADERSHIP SECTION --- */}
+                    {/* Leadership */}
                     <div className="tier president-tier">
                         <div className="member-card highlight">
                             <div className="member-photo-container">
@@ -104,7 +116,7 @@ const Teams = () => {
                         </div>
                     </div>
 
-                    {/* --- DEPARTMENT CIRCLE SECTION --- */}
+                    {/* Department circles */}
                     <div className="functional-teams">
                         {departments.map((dept, index) => (
                             <div key={index} className="dept-container">
@@ -128,11 +140,12 @@ const Teams = () => {
                         ))}
                     </div>
 
-                    {/* --- TEAM PAGE FOOTER --- */}
+                    {/* Footer */}
                     <div className="team-footer">
                         <p>Developed with ❤️ by the <span className="dev-team-highlight">Developer Team</span></p>
                         <p className="footer-contact">If you have any website issues or inquiries, please contact us via email at: <a href="mailto:hardika.ec.24@nitj.ac.in" className="footer-email">hardika.ec.24@nitj.ac.in</a></p>
                     </div>
+
                 </div>
             </div>
         </>

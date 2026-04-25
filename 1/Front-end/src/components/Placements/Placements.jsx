@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from "../Home/Navbar";
+import CircuitBackground from "../Home/CircuitBackground";
 import './Placements.css';
 
 const PLACEHOLDER = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
@@ -14,7 +15,6 @@ const Placements = () => {
             .then(res => res.json())
             .then(data => {
                 setPlacements(data);
-                // auto select the latest year
                 const years = [...new Set(data.map(p => p.year))].sort((a, b) => b - a);
                 if (years.length > 0) setActiveYear(years[0]);
                 setLoading(false);
@@ -25,21 +25,21 @@ const Placements = () => {
             });
     }, []);
 
-    // get unique years sorted latest first
     const years = [...new Set(placements.map(p => p.year))].sort((a, b) => b - a);
-
-    // filter by active year
     const filtered = placements.filter(p => p.year === activeYear);
 
     if (loading) {
         return (
             <>
-                <Navbar />
-                <div className="placements-container">
-                    <div className="placements-overlay">
-                        <h1 className="placements-title">Placement Records</h1>
-                        <p style={{ textAlign: 'center', color: '#aaa' }}>Loading...</p>
+                <div className="pl-hero-wrapper">
+                    <CircuitBackground useWindowSize={true} />
+                    <div className="pl-hero-overlay"></div>
+                    <div className="pl-hero-content">
+                        <Navbar />
                     </div>
+                </div>
+                <div className="placements-container">
+                    <p style={{ textAlign: 'center', color: '#aaa', paddingTop: '60px' }}>Loading...</p>
                 </div>
             </>
         );
@@ -47,12 +47,26 @@ const Placements = () => {
 
     return (
         <>
-            <Navbar />
+            {/* ── Circuit hero ── */}
+            <div className="pl-hero-wrapper">
+                <CircuitBackground useWindowSize={true} />
+                <div className="pl-hero-overlay"></div>
+                <div className="pl-hero-content">
+                    <Navbar />
+                    <div className="pl-hero">
+                        <div className="pl-title-card">
+                            <h1 className="pl-title">Placement Records</h1>
+                            <div className="pl-title-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* ── Rest of page ── */}
             <div className="placements-container">
                 <div className="placements-overlay">
-                    <h1 className="placements-title">Placement Records</h1>
 
-                    {/* Year tabs — built dynamically from DB */}
+                    {/* Year tabs */}
                     <div className="year-tabs">
                         {years.map(year => (
                             <button
@@ -92,6 +106,7 @@ const Placements = () => {
                     <div className="stats-footer">
                         <p>For more detailed placement statistics, <a href="https://ctp.nitj.ac.in/sdashboard/home" target="_blank" rel="noreferrer">go here →</a></p>
                     </div>
+
                 </div>
             </div>
         </>

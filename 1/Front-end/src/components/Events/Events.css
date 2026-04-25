@@ -26,57 +26,98 @@
     --ep-modal-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
 }
 
-/* ── Page wrapper ──────────────────────────────────────── */
-.ep-page {
-    min-height: 100vh;
-    background: var(--ep-bg);
-    font-family: 'Hind', sans-serif;
-    color: var(--ep-text-primary);
-    padding-bottom: 80px;
-}
-
-/* ── Hero / page title ─────────────────────────────────── */
-.ep-hero {
-    padding: 70px 40px 50px;
-    text-align: center;
+/* ── Hero wrapper ── */
+.ep-hero-wrapper {
     position: relative;
+    width: 100%;
+    height: 380px;
     overflow: hidden;
+    background: #09101d;
 }
 
-.ep-hero::before {
-    content: '';
+.ep-hero-wrapper .circuit-canvas {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px;
-    height: 200px;
-    background: radial-gradient(ellipse at top, rgba(45, 212, 191, 0.08) 0%, transparent 70%);
-    pointer-events: none;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 0;
 }
 
-.ep-eyebrow {
-    display: inline-block;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--ep-teal);
-    margin-bottom: 14px;
-    padding: 4px 16px;
-    border: 1px solid rgba(45, 212, 191, 0.3);
-    border-radius: 2px;
+.ep-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        to bottom,
+        rgba(4, 8, 18, 0.35) 0%,
+        rgba(4, 8, 18, 0.45) 60%,
+        rgba(9, 16, 29, 0.92) 100%
+    );
+}
+
+.ep-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ep-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* ── Glass title card ── */
+.ep-title-card {
+    width: 510px;
+    min-height: 118px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 24px;
 }
 
 .ep-page-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(36px, 6vw, 60px);
-    font-weight: 700;
-    color: #e2e8f0;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    color: #ffffff;
     letter-spacing: 2px;
-    margin: 0 0 12px;
+    margin: 0;
     text-transform: uppercase;
+}
+
+.ep-title-line {
+    width: 54px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: #1fd0a1;
+}
+
+/* ── Subtitle below circuit ── */
+.ep-subtitle-wrap {
+    background: var(--ep-bg);
+    text-align: center;
+    padding: 24px 40px 0;
 }
 
 .ep-page-subtitle {
@@ -87,12 +128,21 @@
     margin: 0;
 }
 
-/* ── Filter tabs ───────────────────────────────────────── */
+/* ── Page wrapper ── */
+.ep-page {
+    min-height: 100vh;
+    background: var(--ep-bg);
+    font-family: 'Hind', sans-serif;
+    color: var(--ep-text-primary);
+    padding-bottom: 80px;
+}
+
+/* ── Filter tabs ── */
 .ep-filters {
     display: flex;
     justify-content: center;
     gap: 8px;
-    padding: 0 40px 48px;
+    padding: 40px 40px 48px;
     flex-wrap: wrap;
 }
 
@@ -122,7 +172,7 @@
     color: var(--ep-teal);
 }
 
-/* ── Grid ──────────────────────────────────────────────── */
+/* ── Grid ── */
 .ep-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -132,7 +182,7 @@
     margin: 0 auto;
 }
 
-/* ── Event card ────────────────────────────────────────── */
+/* ── Event card ── */
 .ep-card {
     background: var(--ep-bg-card);
     border: 1px solid var(--ep-border);
@@ -150,25 +200,16 @@
 }
 
 @keyframes ep-card-in {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Stagger delay via inline style */
 .ep-card-thumb {
     width: 100%;
     height: 190px;
     object-fit: contain;
     display: block;
     background: var(--ep-bg-elevated);
-    position: relative;
 }
 
 .ep-card-thumb-placeholder {
@@ -192,15 +233,12 @@
     position: absolute;
     inset: 0;
     background: repeating-linear-gradient(45deg,
-            transparent,
-            transparent 20px,
-            rgba(45, 212, 191, 0.03) 20px,
-            rgba(45, 212, 191, 0.03) 40px);
+        transparent, transparent 20px,
+        rgba(45, 212, 191, 0.03) 20px,
+        rgba(45, 212, 191, 0.03) 40px);
 }
 
-.ep-card-body {
-    padding: 20px 22px 22px;
-}
+.ep-card-body { padding: 20px 22px 22px; }
 
 .ep-card-meta-row {
     display: flex;
@@ -223,7 +261,6 @@
 
 .ep-card-date {
     font-size: 11px;
-    font-weight: 400;
     color: var(--ep-text-muted);
     letter-spacing: 0.5px;
 }
@@ -261,7 +298,6 @@
 .ep-card-attendees {
     font-size: 11.5px;
     color: var(--ep-text-muted);
-    font-weight: 400;
 }
 
 .ep-card-cta {
@@ -277,11 +313,9 @@
     transition: gap 0.2s ease;
 }
 
-.ep-card:hover .ep-card-cta {
-    gap: 9px;
-}
+.ep-card:hover .ep-card-cta { gap: 9px; }
 
-/* ── MODAL overlay ─────────────────────────────────────── */
+/* ── Modal overlay ── */
 .ep-modal-overlay {
     position: fixed;
     inset: 0;
@@ -296,13 +330,8 @@
 }
 
 @keyframes ep-overlay-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .ep-modal {
@@ -320,18 +349,10 @@
 }
 
 @keyframes ep-modal-in {
-    from {
-        opacity: 0;
-        transform: scale(0.94) translateY(16px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+    from { opacity: 0; transform: scale(0.94) translateY(16px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-/* Modal media */
 .ep-modal-media {
     width: 100%;
     height: 280px;
@@ -354,7 +375,6 @@
     letter-spacing: 6px;
 }
 
-/* Gallery strip */
 .ep-modal-gallery {
     display: flex;
     gap: 8px;
@@ -363,9 +383,7 @@
     scrollbar-width: none;
 }
 
-.ep-modal-gallery::-webkit-scrollbar {
-    display: none;
-}
+.ep-modal-gallery::-webkit-scrollbar { display: none; }
 
 .ep-modal-gallery-thumb {
     width: 80px;
@@ -385,10 +403,7 @@
     transform: scale(1.05);
 }
 
-/* Modal content */
-.ep-modal-content {
-    padding: 28px 28px 32px;
-}
+.ep-modal-content { padding: 28px 28px 32px; }
 
 .ep-modal-top {
     display: flex;
@@ -429,7 +444,6 @@
     border: 1px solid var(--ep-border-light);
     background: transparent;
     color: var(--ep-text-secondary);
-    font-size: 18px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -444,7 +458,6 @@
     color: var(--ep-red);
 }
 
-/* Meta pills */
 .ep-modal-meta {
     display: flex;
     flex-wrap: wrap;
@@ -464,12 +477,8 @@
     color: var(--ep-text-secondary);
 }
 
-.ep-modal-meta-pill svg {
-    opacity: 0.6;
-    flex-shrink: 0;
-}
+.ep-modal-meta-pill svg { opacity: 0.6; flex-shrink: 0; }
 
-/* Description */
 .ep-modal-desc-label {
     font-family: 'Rajdhani', sans-serif;
     font-size: 10px;
@@ -488,7 +497,6 @@
     margin: 0 0 24px;
 }
 
-/* Highlights */
 .ep-modal-highlights {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -508,14 +516,12 @@
     gap: 8px;
 }
 
-/* Divider */
 .ep-modal-divider {
     height: 1px;
     background: var(--ep-border);
     margin-bottom: 20px;
 }
 
-/* No events */
 .ep-empty {
     text-align: center;
     padding: 80px 40px;
@@ -534,18 +540,24 @@
     letter-spacing: 1px;
 }
 
-/* ── Responsive ────────────────────────────────────────── */
+/* ── Responsive ── */
 @media (max-width: 640px) {
+    .ep-hero-wrapper { height: 300px; }
+
+    .ep-title-card {
+        width: calc(100% - 40px);
+        min-height: 100px;
+        padding: 18px 16px;
+        border-radius: 14px;
+    }
+
+    .ep-subtitle-wrap { padding: 16px 20px 0; }
+
     .ep-grid {
         padding: 0 16px;
         grid-template-columns: 1fr;
     }
 
-    .ep-hero {
-        padding: 50px 20px 36px;
-    }
-
-    /* All filter buttons in one row */
     .ep-filters {
         display: flex;
         flex-wrap: nowrap;
@@ -557,37 +569,20 @@
         scrollbar-width: none;
     }
 
-    .ep-filters::-webkit-scrollbar {
-        display: none;
-    }
+    .ep-filters::-webkit-scrollbar { display: none; }
 
     .ep-filter-btn {
         font-size: 10px;
         padding: 6px 10px;
         letter-spacing: 1px;
         white-space: nowrap;
-        flex: 1;
         flex-shrink: 0;
     }
 
-    .ep-modal-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .ep-modal-content {
-        padding: 20px 20px 24px;
-    }
-
+    .ep-modal-highlights { grid-template-columns: 1fr; }
+    .ep-modal-content { padding: 20px 20px 24px; }
     .ep-modal-media,
-    .ep-modal-media-placeholder {
-        height: 200px;
-    }
-
-    .ep-page-subtitle {
-        font-size: 13px;
-    }
-
-    .ep-card-title {
-        font-size: 16px;
-    }
+    .ep-modal-media-placeholder { height: 200px; }
+    .ep-page-subtitle { font-size: 13px; }
+    .ep-card-title { font-size: 16px; }
 }
